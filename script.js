@@ -3,8 +3,6 @@ var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 var button = document.getElementById("random");
-// var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-// var randomColor2 = '#'+Math.floor(Math.random()*16777215).toString(16);
 
 var colorPicker = function(){
     body.style.background =
@@ -28,19 +26,6 @@ var btnColorPicker = function(){
     css.textContent = "Hex Values: " + color1.value + " " + color2.value + ";";
 };
 
-var btnColorPickerRandom = function(){
-    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-    var randomColor2 = '#'+Math.floor(Math.random()*16777215).toString(16);
-    button.style.background =
-     "linear-gradient(to right, " 
-     + randomColor
-     + ", " 
-     + randomColor2 
-     + ")";
- 
-     css.textContent = "Hex Values: " + randomColor + " " + randomColor2 + ";";
- };
-
 var randomPicker = function(){
     var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     var randomColor2 = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -50,16 +35,24 @@ var randomPicker = function(){
     + ", " 
     + randomColor2 
     + ")";
+    button.style.background =
+    "linear-gradient(to right, " 
+    + randomColor
+    + ", " 
+    + randomColor2 
+    + ")";
+    color1.value = randomColor;
+    color2.value = randomColor2;
+    
 
     css.textContent = "Hex Values: " + randomColor + " " + randomColor2 + ";";
 };
 
 button.addEventListener("click", randomPicker);
-button.addEventListener("click", randomPicker);
+// button.addEventListener("click", btnColorPickerRandom);
 
 color1.addEventListener("input", colorPicker);
 color1.addEventListener("input", btnColorPicker);
 
 color2.addEventListener("input", colorPicker);
 color2.addEventListener("input", btnColorPicker);
-
