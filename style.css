@@ -25,3 +25,13 @@ h3 {
     letter-spacing: 0.01em;
 
 }
+
+button {
+    background: linear-gradient(to right, #00ffff , #ff00ff);
+    font: 'Raleway', sans-serif;
+    color:rgba(0,0,0,.55);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5em;
+}
